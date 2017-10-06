@@ -28,6 +28,6 @@ class Readme < String
     end
 end
 
-def readme(path = File.expand_path("./README.md"))
+def readme(path = File.expand_path("./README.md", __dir__))
   (@readmes ||= {})[path] ||= Readme.new(path)
 end
